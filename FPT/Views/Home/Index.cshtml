@@ -1,0 +1,35 @@
+﻿@model  List<FPT.Models.Courses>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (Request.IsAuthenticated) { 
+<div class="row">
+
+    <h2>Courses To Day</h2>
+
+    @foreach (var course in Model)
+    {
+        <div class="col-sm-3">
+            <div class="card course">
+                <div class="card-body">
+                    <h3 class="card-title">@course.CourseName</h3>
+                    <h4 class="card-subtitle mb-2 text-muted">@course.CourseDate</h4>
+                    <p class="card-text">@course.Author</p>
+                </div>
+            </div>
+        </div>
+    }
+
+    
+    
+</div>
+
+<footer>
+    <p>&copy; @DateTime.Now.Year - FPT</p>
+</footer>
+}
+
+
+
